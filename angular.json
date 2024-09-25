@@ -28,13 +28,25 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                "output": "/assets/"
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/style.css"
             ],
-            "scripts": [],
+           "scripts": [
+            "node_modules/jquery/dist/jquery.min.js",
+            "node_modules/wowjs/dist/wow.min.js",
+            "src/assets/js/main.js",
+            "src/assets/lib/easing/easing.min.js",
+            "src/assets/lib/owlcarousel/owl.carousel.min.js",
+            "src/assets/lib/waypoints/waypoints.min.js",
+            "src/assets/lib/wow/wow.min.js"
+],
+
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -92,16 +104,28 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                "output": "/assets/"
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/wowjs/dist/wow.min.js",
+              "src/assets/js/main.js",
+              "src/assets/lib/easing/easing.min.js",
+              "src/assets/lib/owlcarousel/owl.carousel.min.js",
+              "src/assets/lib/waypoints/waypoints.min.js" ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

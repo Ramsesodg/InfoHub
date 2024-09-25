@@ -1,0 +1,439 @@
+
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <!-- Google Web Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
+
+ <!-- Icon Font Stylesheet -->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+  <div class="container-xxl bg-white p-0">
+      <!-- Spinner Start -->
+      <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+          <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+              <span class="sr-only">Loading...</span>
+          </div>
+      </div>
+      <!-- Spinner End -->
+
+
+      <!-- Navbar & Hero Start -->
+      <div class="container-xxl position-relative p-0" id="home">
+          <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+              <a href="" class="navbar-brand p-0">
+                  <h1 class="m-0">GP-Colis</h1>
+                  <!-- <img src="assets/img/logo.png" alt="Logo"> -->
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                  <span class="fa fa-bars"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                  <div class="navbar-nav mx-auto py-0">
+                      <a href="#home" class="nav-item nav-link active">Accueil</a>
+                      <a href="#about" class="nav-item nav-link">À propos</a>
+                      <a href="#feature" class="nav-item nav-link">Fonctionnalités</a>
+
+                      <a href="#review" class="nav-item nav-link">Avis</a>
+                      <a href="#contact" class="nav-item nav-link">Contact</a>
+                  </div>
+                  <a href="" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Télécharger</a>
+              </div>
+          </nav>
+
+          <div class="container-xxl bg-primary hero-header">
+              <div class="container px-lg-5">
+                  <div class="row g-5">
+                      <div class="col-lg-8 text-center text-lg-start">
+                          <h1 class="text-white mb-4 animated slideInDown">L'Application pour expédier et recevoir vos colis facilement</h1>
+                          <p class="text-white pb-3 animated slideInDown">Profitez des kilos inutilisés des voyageurs pour acheminer vos colis partout dans le monde à moindre coût.</p>
+                          <a href="" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
+                          <a href="" class="btn btn-secondary-gradient py-sm-3 px-4 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+                      </div>
+                      <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end wow fadeInUp" data-wow-delay="0.3s">
+                          <div class="owl-carousel screenshot-carousel">
+                              <img class="img-fluid" src="assets/img/screenshot-1.png" alt="">
+                              <!-- <img class="img-fluid" src="assets/img/screenshot-2.png" alt="">
+                              <img class="img-fluid" src="assets/img/screenshot-3.png" alt="">
+                              <img class="img-fluid" src="assets/img/screenshot-4.png" alt="">
+                              <img class="img-fluid" src="assets/img/screenshot-5.png" alt=""> -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Navbar & Hero End -->
+
+
+      <!-- About Start -->
+      <div class="container-xxl py-5" id="about">
+          <div class="container py-5 px-lg-5">
+              <div class="row g-5 align-items-center">
+                  <div class="row g-5 align-items-center">
+                      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                          <h5 class="text-primary-gradient fw-medium">À propos</h5>
+                          <h1 class="mb-4">#1 Plateforme pour l'envoi de colis à moindre coût</h1>
+                          <p class="mb-4">GP-Colis est la solution idéale pour connecter expéditeurs et voyageurs, permettant d'envoyer des colis rapidement et à moindre coût, tout en aidant les voyageurs à monétiser leurs kilos de bagages inutilisés. Nous facilitons les échanges internationaux tout en réduisant les coûts de transport.</p>
+                          <div class="row g-4 mb-4">
+                              <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                                  <div class="d-flex">
+                                      <i class="fa fa-cogs fa-2x text-primary-gradient flex-shrink-0 mt-1"></i>
+                                      <div class="ms-3">
+                                          <h2 class="mb-0" data-toggle="counter-up">O+</h2>
+                                          <p class="text-primary-gradient mb-0">Utilisateurs actifs</p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                                  <div class="d-flex">
+                                      <i class="fa fa-comments fa-2x text-secondary-gradient flex-shrink-0 mt-1"></i>
+                                      <div class="ms-3">
+                                          <h2 class="mb-0" data-toggle="counter-up">O+</h2>
+                                          <p class="text-secondary-gradient mb-0">Avis clients</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <a href="#feature" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill mt-3">En savoir plus</a>
+                      </div>
+                      <div class="col-lg-6">
+                          <img class="img-fluid wow fadeInUp" data-wow-delay="0.5s" src="assets/img/about.png" alt="GP-Colis Image">
+                      </div>
+                  </div>
+
+
+              </div>
+          </div>
+      </div>
+      <!-- About End -->
+
+
+      <!-- Features Start -->
+      <div class="container-xxl py-5" id="fonctionnalite">
+        <div class="container py-5 px-lg-5">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h5 class="text-primary-gradient fw-medium">Fonctionnalités</h5>
+                <h1 class="mb-5">Découvrez les Fonctionnalités de GP-Colis</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="feature-item bg-light rounded p-4" style="height: 300px;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                            <i class="fa fa-bullhorn text-white fs-4"></i>
+                        </div>
+                        <h5 class="mb-3">Publication d'Offres</h5>
+                        <p class="m-0">Les voyageurs peuvent publier les kilos de bagage qu'ils souhaitent proposer, tandis que les expéditeurs publient leurs colis à envoyer.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="feature-item bg-light rounded p-4" style="height: 300px;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                            <i class="fa fa-user-cog text-white fs-4"></i>
+                        </div>
+                        <h5 class="mb-3">Personnalisation des Profils</h5>
+                        <p class="m-0">Créez un profil complet et suivez les annonces de vos contacts ou de la communauté GP-Colis.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="feature-item bg-light rounded p-4" style="height: 300px;">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                            <i class="fa fa-star text-white fs-4"></i>
+                        </div>
+                        <h5 class="mb-3">Système d’Évaluation</h5>
+                        <p class="m-0">Donnez et recevez des avis pour chaque interaction afin d'assurer un service de qualité et sécurisé.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+      <!-- Features End -->
+
+
+   <!-- How It Works Start -->
+<!-- How It Works Start -->
+<div class="container-xxl py-5" id="how-it-works">
+  <div class="container py-5 px-lg-5">
+      <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
+          <h5 class="text-primary-gradient fw-medium">Comment ça marche</h5>
+          <h1 class="mb-5">3 Étapes Simples</h1>
+      </div>
+      <div class="row gy-5 gx-4 justify-content-center">
+          <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="position-relative bg-light rounded pt-5 pb-4 px-4" style="min-height: 300px;">
+                  <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                      <i class="fa fa-download fa-3x text-white"></i>
+                  </div>
+                  <h5 class="mt-4 mb-3">Installez l'App</h5>
+                  <p class="mb-0">Téléchargez et installez l'application sur votre smartphone ou tablette via l'App Store ou le Play Store pour commencer à utiliser nos services.</p>
+              </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="position-relative bg-light rounded pt-5 pb-4 px-4" style="min-height: 300px;">
+                  <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                      <i class="fa fa-user-cog fa-3x text-white"></i>
+                  </div>
+                  <h5 class="mt-4 mb-3">Configurez Votre Profil</h5>
+                  <p class="mb-0">Créez et personnalisez votre compte pour accéder à toutes les fonctionnalités et recevoir des recommandations adaptées à vos besoins.</p>
+              </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="position-relative bg-light rounded pt-5 pb-4 px-4" style="min-height: 300px;">
+                  <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                      <i class="fa fa-check-circle fa-3x text-white"></i>
+                  </div>
+                  <h5 class="mt-4 mb-3">Profitez des Fonctionnalités</h5>
+                  <p class="mb-0">Accédez à toutes les fonctionnalités de l'application, suivez vos activités et profitez de nos services en toute simplicité et sécurité.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- How It Works End -->
+
+<!-- How It Works End -->
+
+<!-- Download Start -->
+<div class="container-xxl py-5" id="download">
+  <div class="container py-5 px-lg-5">
+      <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+              <img class="img-fluid wow fadeInUp" data-wow-delay="0.1s" src="assets/img/about.png" alt="App Image">
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="min-height: 300px;">
+              <h5 class="text-primary-gradient fw-medium">Téléchargez</h5>
+              <h1 class="mb-4">Téléchargez La Dernière Version De Notre Application</h1>
+              <p class="mb-4">Profitez d'une expérience optimisée en téléchargeant la version la plus récente de notre application. Découvrez toutes nos nouvelles fonctionnalités, corrections de bugs et améliorations de performances pour un usage encore plus fluide et intuitif.</p>
+              <div class="row g-4">
+                  <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 300px;">
+                      <a href="#" class="d-flex bg-primary-gradient rounded py-3 px-4">
+                          <i class="fab fa-apple fa-3x text-white flex-shrink-0"></i>
+                          <div class="ms-4">
+                              <p class="text-white mb-0">Disponible Sur</p>
+                              <h5 class="text-white mb-0">App Store</h5>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s" style="min-height: 300px;">
+                      <a href="#" class="d-flex bg-secondary-gradient rounded py-3 px-4">
+                          <i class="fab fa-android fa-3x text-white flex-shrink-0"></i>
+                          <div class="ms-4">
+                              <p class="text-white mb-0">Disponible Sur</p>
+                              <h5 class="text-white mb-0">Play Store</h5>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Download End -->
+
+
+
+
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl" id="review" style="max-width: 1140px; margin: 0 auto; padding-top: 3rem; padding-bottom: 3rem;">
+      <div class="container" style="padding-left: 3rem; padding-right: 3rem;">
+          <div class="text-center" style="text-align: center;">
+              <h5 class="text-primary-gradient" >Avis</h5>
+              <h1 style="margin-bottom: 3rem;">Ce Que Disent Nos Clients !</h1>
+          </div>
+          <div class="owl-carousel testimonial-carousel" style="display: flex; flex-wrap: nowrap; gap: 20px; position: relative; overflow: hidden;">
+              <div class="testimonial-item" style="flex: 1 1 auto; width: 300px; border-radius: 8px; padding: 20px; background: #f9f9f9; box-shadow: 0 4px 8px rgba(0,0,0,0.1); box-sizing: border-box;">
+                  <div class="d-flex" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                      <img class="img-fluid" src="assets/img/testimonial-1.jpg" alt="Marie B." style="width: 85px; height: 85px; border-radius: 50%; background: white; padding: 1px; margin-right: 20px;">
+                      <div style="margin-left: 1.5rem;">
+                          <h5 style="margin-bottom: 0.5rem;">Marie B.</h5>
+                          <p style="margin-bottom: 0.25rem;">Voyageuse</p>
+                          <div class="stars" style="color: #f39c12;">
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                          </div>
+                      </div>
+                  </div>
+                  <p style="margin-bottom: 0;">J'ai pu envoyer un colis à ma sœur en Europe pour une fraction du prix habituel. GP-Colis est une véritable révolution !</p>
+              </div>
+              <div class="testimonial-item" style="flex: 1 1 auto; width: 300px; border-radius: 8px; padding: 20px; background: #f9f9f9; box-shadow: 0 4px 8px rgba(0,0,0,0.1); box-sizing: border-box;">
+                  <div class="d-flex" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                      <img class="img-fluid" src="assets/img/testimonial-2.jpg" alt="Ali S." style="width: 85px; height: 85px; border-radius: 50%; background: white; padding: 1px; margin-right: 20px;">
+                      <div style="margin-left: 1.5rem;">
+                          <h5 style="margin-bottom: 0.5rem;">Ali S.</h5>
+                          <p style="margin-bottom: 0.25rem;">Voyageur Fréquent</p>
+                          <div class="stars" style="color: #f39c12;">
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                          </div>
+                      </div>
+                  </div>
+                  <p style="margin-bottom: 0;">En tant que voyageur fréquent, je finance mes déplacements en transportant des colis. Le système est sûr et facile à utiliser.</p>
+              </div>
+              <div class="testimonial-item" style="flex: 1 1 auto; width: 300px; border-radius: 8px; padding: 20px; background: #f9f9f9; box-shadow: 0 4px 8px rgba(0,0,0,0.1); box-sizing: border-box;">
+                  <div class="d-flex" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                      <img class="img-fluid" src="assets/img/testimonial-3.jpg" alt="Fatou M." style="width: 85px; height: 85px; border-radius: 50%; background: white; padding: 1px; margin-right: 20px;">
+                      <div style="margin-left: 1.5rem;">
+                          <h5 style="margin-bottom: 0.5rem;">Fatou M.</h5>
+                          <p style="margin-bottom: 0.25rem;">Cliente</p>
+                          <div class="stars" style="color: #f39c12;">
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                              <small class="fa fa-star" style="font-size: 14px; margin-right: 2px;"></small>
+                          </div>
+                      </div>
+                  </div>
+                  <p style="margin-bottom: 0;">J'adore pouvoir suivre mon colis en temps réel et savoir qu'il est en de bonnes mains avec un voyageur de confiance.</p>
+              </div>
+          </div>
+     </div>
+  </div>
+
+<!-- Testimonial End -->
+
+
+
+   <!-- Contact Start -->
+<div class="container-xxl py-5" id="contact">
+  <div class="container py-5 px-lg-5">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h5 class="text-primary-gradient fw-medium">Contactez-Nous</h5>
+          <h1 class="mb-5">Nous Contactez !</h1>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-lg-9">
+              <div class="wow fadeInUp" data-wow-delay="0.3s">
+                  <p class="text-center mb-4">Vous avez des questions ou souhaitez en savoir plus sur GP-Colis ? Contactez-nous !</p>
+               <form>
+                      <div class="row g-3">
+                          <div class="col-md-6">
+                              <div class="form-floating">
+                                  <input type="text" class="form-control" id="name" placeholder="Votre Nom">
+                                  <label for="name">Votre Nom</label>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-floating">
+                                  <input type="email" class="form-control" id="email" placeholder="Votre Email">
+                                  <label for="email">Votre Email</label>
+                              </div>
+                          </div>
+                          <div class="col-12">
+                              <div class="form-floating">
+                                  <input type="text" class="form-control" id="subject" placeholder="Sujet">
+                                  <label for="subject">Sujet</label>
+                              </div>
+                          </div>
+                          <div class="col-12">
+                              <div class="form-floating">
+                                  <textarea class="form-control" placeholder="Laissez un message ici" id="message" style="height: 150px"></textarea>
+                                  <label for="message">Message</label>
+                              </div>
+                          </div>
+                          <div class="col-12 text-center">
+                              <button class="btn btn-primary-gradient rounded-pill py-3 px-5" type="submit">Envoyer le Message</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Contact End -->
+
+
+
+      <!-- Footer Start -->
+<div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+  <div class="container py-5 px-lg-5">
+      <div class="row g-5">
+          <!-- Contact Information -->
+          <div class="col-md-6 col-lg-3">
+              <h4 class="text-white mb-4">Contact</h4>
+              <p><i class="fa fa-map-marker-alt me-3"></i>123 Rue, Bobo-Dioulasso, Burkina Faso</p>
+              <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+226123456789" class="text-light">+226 123 456 789</a></p>
+              <p><i class="fa fa-envelope me-3"></i><a href="mailto:support@gp-colis.com" class="text-light">supportgp-colis.com</a></p>
+              <div class="d-flex pt-2">
+                  <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/gp-colis" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light btn-social" href="https://wa.me/+226123456789" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/gp-colis" target="_blank"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+          <!-- Quick Links -->
+          <div class="col-md-6 col-lg-3">
+              <h4 class="text-white mb-4">Liens Rapides</h4>
+              <a class="btn btn-link" href="#about">À Propos</a>
+              <a class="btn btn-link" href="#contact">Contact</a>
+              <a class="btn btn-link" href="#privacy-policy">Politique de Confidentialité</a>
+              <a class="btn btn-link" href="#terms">Conditions d'Utilisation</a>
+              <a class="btn btn-link" href="#career">Carrières</a>
+          </div>
+          <!-- Popular Links -->
+          <div class="col-md-6 col-lg-3">
+              <h4 class="text-white mb-4">Liens Populaires</h4>
+              <a class="btn btn-link" href="#about">À Propos</a>
+              <a class="btn btn-link" href="#contact">Contact</a>
+              <a class="btn btn-link" href="#privacy-policy">Politique de Confidentialité</a>
+              <a class="btn btn-link" href="#terms">Conditions d'Utilisation</a>
+              <a class="btn btn-link" href="#career">Carrières</a>
+          </div>
+          <!-- Newsletter -->
+          <div class="col-md-6 col-lg-3">
+              <h4 class="text-white mb-4">Newsletter</h4>
+              <p>Abonnez-vous à notre newsletter pour recevoir les dernières nouvelles et offres spéciales.</p>
+              <div class="position-relative w-100 mt-3">
+                  <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Votre Email" style="height: 48px;">
+                  <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary-gradient fs-4"></i></button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container px-lg-5">
+      <div class="copyright">
+          <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                  &copy; <a class="border-bottom" href="#">GP-Colis</a>, Tous Droits Réservés.
+
+             </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up text-white"></i></a>
+  </div>
+
+</body>
+
+</html>
+
