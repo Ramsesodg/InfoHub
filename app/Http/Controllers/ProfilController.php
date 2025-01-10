@@ -18,7 +18,7 @@ class ProfilController extends Controller
     // Afficher le formulaire de création
     public function create()
     {
-        return view('profils.create'); // Optionnel si on gère tout sur la même vue
+       
     }
 
     // Enregistrer un nouveau profil
