@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="../index3.html" class="brand-link">
       <img src="assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">InfoHub</span>
     </a>
 
     <!-- Sidebar -->
@@ -36,18 +36,18 @@
                with font-awesome or any other icon font library -->
 
           <li class="nav-item">
-            <a href="/" class="nav-link {{ $elementActive == 'home' ? 'active' : '' }}">
-              <i class="nav-icon fas fa-home"></i>
+            <a href="/" class="nav-link {{ $elementActive == 'profils' ? 'active' : '' }}">
+              <i class="nav-icon fas fa-id-badge"></i>
               <p>
-                Home
+                Profils
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/contact" class="nav-link  {{ $elementActive == 'contact' ? 'active' : '' }}">
-            <i class="nav-icon fas fa-id-card-alt"></i>
+            <a href="/fiches" class="nav-link  {{ $elementActive == 'fiches' ? 'active' : '' }}">
+            <i class="nav-icon fas fa fa-window-maximize"></i>
               <p>
-                Contact us
+                Fiches
               </p>
             </a>
           </li>

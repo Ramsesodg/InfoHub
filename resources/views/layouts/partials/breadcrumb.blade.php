@@ -6,11 +6,11 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
-              
+              <li class="breadcrumb-item"><a href="/">Profiles</a></li>
+
             @foreach(Request::segments() as $segment)
             <li class="breadcrumb-item">
-                <a href="{{ route('contact') }}">{{$segment}}</a>
+                <a href="{{ route('fiches') }}">{{$segment}}</a>
             </li>
             @endforeach
             </ol>

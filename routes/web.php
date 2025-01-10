@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,9 @@ use App\Http\Controllers\HomeController;
 
 });*/
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/fiches', [HomeController::class, 'fiches'])->name('fiches');
+
+Route::post('/profils', [ProfilController::class, 'store'])->name('profils.store');
+
+// Route pour désactiver un profil
+Route::patch('/profils/{id}/disable', [ProfilController::class, 'disable'])->name('profils.disable');

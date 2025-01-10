@@ -21,7 +21,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.home');
+        return view('pages.profils');
     }
 
     /**
@@ -29,8 +29,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function contact()
+    public function fiches()
     {
-        return view('pages.contact');
+        return view('pages.fiches');
     }
 }
