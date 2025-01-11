@@ -16,6 +16,7 @@ class Profil extends Model
         'nom_utilisateur',
         'pass',
         'type',
+        'status',
     ];
 
     public function fiches()

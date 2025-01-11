@@ -14,19 +14,18 @@ class CreateProfilsTable extends Migration
     public function up()
     {
         Schema::create('profils', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // Identifiant auto-incrémenté
             $table->string('nom');
             $table->string('prenom');
             $table->string('telephone');
             $table->string('email')->unique();
-            $table->string('nom_utilisateur')->unique(); // Nom utilisateur
-            $table->string('pass'); // Mot de passe
-            $table->enum('type', ['admin', 'utilisateur'])->default('utilisateur'); // Type (admin ou utilisateur)
+            $table->string('nom_utilisateur')->unique();
+            $table->string('pass');
+            $table->string('status')->default('actif'); // Défaut corrigé
+            $table->enum('type', ['admin', 'utilisateur'])->default('utilisateur');
             $table->timestamps();
         });
     }
-
-
 
     /**
      * Reverse the migrations.
@@ -37,4 +36,5 @@ class CreateProfilsTable extends Migration
     {
         Schema::dropIfExists('profils');
     }
+
 }

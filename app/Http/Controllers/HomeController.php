@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profil;
+use App\Models\Fiche;
+
 class HomeController extends Controller
 {
     /**
@@ -21,8 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //return view('pages.profils');
-        
+        $profils = Profil::all();
+        $profils = Profil::paginate(05); // 10 profils par page
+        return view('pages.profils', compact('profils')); // Envoie les données à la vue
+
     }
 
     /**
@@ -32,6 +37,8 @@ class HomeController extends Controller
      */
     public function fiches()
     {
+        $fiches = Fiche::with('profil')->paginate(10); // Chargement des fiches avec les profils liés
+        $profils = Profil::all(); // Récupération de tous les profils pour le formulaire
         return view('pages.fiches');
     }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\FicheController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,10 @@ use App\Http\Controllers\ProfilController;
     Route::get('/', 'HomeController@index');
 
 });*/
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/fiches', [HomeController::class, 'fiches'])->name('fiches');
-
 Route::post('/profils', [ProfilController::class, 'store'])->name('profils.store');
+Route::put('/profils/{id}', [ProfilController::class, 'update'])->name('profils.update');
+Route::put('/profils/{id}/toggle-status', [ProfilController::class, 'toggleStatus'])->name('profils.toggleStatus');
+Route::post('/fiches-add', [FicheController::class, 'store'])->name('fiches.store');
 
-// Route pour désactiver un profil
-Route::patch('/profils/{id}/disable', [ProfilController::class, 'disable'])->name('profils.disable');

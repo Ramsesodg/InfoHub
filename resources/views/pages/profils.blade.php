@@ -12,57 +12,70 @@
         <button type="submit" class="btn btn-primary">Rechercher</button>
     </form>
 
-    <!-- Bouton de création -->
-    <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#createProfileModal">
+   <!-- Bouton pour ouvrir le modal Créer un Profil -->
+   <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#createProfileModal">
         Ajouter un Nouveau Profil
     </button>
 
-    <!-- Modal pour Ajouter un Nouveau Profil -->
-    <div class="modal fade" id="createProfileModal" tabindex="-1" aria-labelledby="createProfileModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="createProfileModalLabel">Ajouter un Nouveau Profil</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="POST">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="nom">Nom</label>
-                                <input type="text" name="nom" class="form-control" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="prenom">Prénom</label>
-                                <input type="text" name="prenom" class="form-control" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" class="form-control" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="telephone">Téléphone</label>
-                                <input type="text" name="telephone" class="form-control" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="nom_utilisateur">Nom Utilisateur</label>
-                                <input type="text" name="nom_utilisateur" class="form-control" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="pass">Mot de Passe</label>
-                                <input type="password" name="pass" class="form-control" required>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-success">Créer</button>
-                    </form>
-                </div>
+    <!-- Modal Créer un Profil -->
+<div class="modal fade" id="createProfileModal" tabindex="-1" aria-labelledby="createProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createProfileModalLabel">Créer un Nouveau Profil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('profils.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="nom">Nom</label>
+                        <input type="text" class="form-control" id="nom" name="nom" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" class="form-control" id="prenom" name="prenom" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telephone">Téléphone</label>
+                        <input type="text" class="form-control" id="telephone" name="telephone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nom_utilisateur">Nom d'Utilisateur</label>
+                        <input type="text" class="form-control" id="nom_utilisateur" name="nom_utilisateur" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mot_de_passe">Mot de Passe</label>
+                        <input type="password" class="form-control" id="mot_de_passe" name="mot_de_passe" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="type">Type</label>
+                        <select class="form-control" id="type" name="type" required>
+                            <option value="admin">Admin</option>
+                            <option value="utilisateur">Utilisateur</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="status">Statut</label>
+                        <select class="form-control" id="status" name="status" required>
+                            <option value="actif">Actif</option>
+                            <option value="inactif">Inactif</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Créer</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Tableau des profils -->
-    <table class="table table-striped table-bordered mt-3">
+
+    <!-- Tableau des Profils -->
+    <table class="table table-bordered mt-3">
         <thead>
             <tr>
                 <th>Nom</th>
@@ -70,73 +83,111 @@
                 <th>Email</th>
                 <th>Téléphone</th>
                 <th>Type</th>
+                <th>Statut</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <!-- Bouton Modifier -->
-                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Modifier
-                    </button>
-
-                    <!-- Form Désactiver -->
-                    <form action="" method="POST" style="display:inline;">
-                        @csrf
-                        @method('PATCH')
-                        <button type="submit" class="btn btn-danger btn-sm">Désactiver</button>
-                    </form>
-                </td>
-            </tr>
-
-            <!-- Modal Modifier -->
-            <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="editModalLabel">Modifier le Profil</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="" method="POST">
-                                @csrf
-                                @method('PUT')
-                                <div class="mb-3">
-                                    <label for="nom">Nom</label>
-                                    <input type="text" name="nom" class="form-control" value="" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="prenom">Prénom</label>
-                                    <input type="text" name="prenom" class="form-control" value="" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" class="form-control" value="" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="telephone">Téléphone</label>
-                                    <input type="text" name="telephone" class="form-control" value="" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nom_utilisateur">Nom Utilisateur</label>
-                                    <input type="text" name="nom_utilisateur" class="form-control" value="" required>
-                                </div>
-                                <button type="submit" class="btn btn-success">Mettre à jour</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            @foreach($profils as $profil)
+                <tr>
+                    <td>{{ $profil->nom }}</td>
+                    <td>{{ $profil->prenom }}</td>
+                    <td>{{ $profil->email }}</td>
+                    <td>{{ $profil->telephone }}</td>
+                    <td>{{ $profil->type }}</td>
+                    <td>
+                        <span class="badge bg-{{ $profil->status === 'actif' ? 'success' : 'danger' }}">
+                            {{ ucfirst($profil->status) }}
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editProfileModal-{{ $profil->id }}">Modifier</button>
+                        <form action="{{ route('profils.toggleStatus', $profil->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" class="btn btn-{{ $profil->status === 'actif' ? 'danger' : 'success' }} btn-sm">
+                                {{ $profil->status === 'actif' ? 'Désactiver' : 'Activer' }}
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
+    <!-- Pagination links -->
+<div class="mt-4">
+    {{ $profils->links() }}
 </div>
+<style>
+    /* Dans votre fichier CSS */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-link {
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #e9ecef;
+    color: #6c757d;
+}
+
+</style>
+    @foreach($profils as $profil)
+<!-- Modal Modifier un Profil -->
+<div class="modal fade" id="editProfileModal-{{ $profil->id }}" tabindex="-1" aria-labelledby="editProfileModalLabel-{{ $profil->id }}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProfileModalLabel-{{ $profil->id }}">Modifier le Profil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('profils.update', $profil->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="mb-3">
+                        <label for="nom-{{ $profil->id }}">Nom</label>
+                        <input type="text" class="form-control" id="nom-{{ $profil->id }}" name="nom" value="{{ $profil->nom }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="prenom-{{ $profil->id }}">Prénom</label>
+                        <input type="text" class="form-control" id="prenom-{{ $profil->id }}" name="prenom" value="{{ $profil->prenom }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email-{{ $profil->id }}">Email</label>
+                        <input type="email" class="form-control" id="email-{{ $profil->id }}" name="email" value="{{ $profil->email }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telephone-{{ $profil->id }}">Téléphone</label>
+                        <input type="text" class="form-control" id="telephone-{{ $profil->id }}" name="telephone" value="{{ $profil->telephone }}">
+                    </div>
+                    <button type="submit" class="btn btn-success">Mettre à jour</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
