@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Profil;
 use App\Models\Fiche;
+use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {
@@ -22,13 +24,22 @@ class HomeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+
+    public function index(Request $request)
     {
         $profils = Profil::all();
-        $profils = Profil::paginate(05); // 10 profils par page
-        return view('pages.profils', compact('profils')); // Envoie les données à la vue
+        $search = $request->input('search');
 
+        $profils = Profil::when($search, function ($query, $search) {
+            $query->where('nom', 'like', "%$search%")
+                ->orWhere('prenom', 'like', "%$search%")
+                ->orWhere('email', 'like', "%$search%")
+                ->orWhere('telephone', 'like', "%$search%");
+        })->paginate(02);
+
+        return view('pages.profils', compact('profils', 'search'));
     }
+
 
     /**
      * Show the application contact.

@@ -7,10 +7,16 @@
 <div class="container">
     <h1>Gestion des Profils</h1>
 
-    <form action="" method="GET" class="d-flex mb-3">
-        <input type="text" name="search" class="form-control me-2" placeholder="Rechercher un profil" value="">
+    <form action="{{ route('index') }}" method="GET" class="d-flex mb-3">
+        <input
+            type="text"
+            name="search"
+            class="form-control me-2"
+            placeholder="Rechercher un profil"
+            value="{{ request('search') }}">
         <button type="submit" class="btn btn-primary">Rechercher</button>
     </form>
+
 
    <!-- Bouton pour ouvrir le modal Créer un Profil -->
    <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#createProfileModal">
@@ -114,45 +120,59 @@
             @endforeach
         </tbody>
     </table>
-    <!-- Pagination links -->
-<div class="mt-4">
-    {{ $profils->links() }}
+    <!-- Ma section pagination -->
+
+    <div class="pagination justify-content-center">
+    @if ($profils->onFirstPage())
+        <span class="btn btn-secondary disabled">Précédent</span>
+    @else
+        <a
+            href="{{ $profils->previousPageUrl() }}@if(request('search'))&search={{ request('search') }}@endif"
+            class="btn btn-primary"
+        >
+            Précédent
+        </a>
+    @endif
+
+    @for ($i = 1; $i <= $profils->lastPage(); $i++)
+        <a
+            href="{{ $profils->url($i) }}@if(request('search'))&search={{ request('search') }}@endif"
+            class="btn {{ $i == $profils->currentPage() ? 'btn-secondary' : 'btn-outline-primary' }}"
+        >
+            {{ $i }}
+        </a>
+    @endfor
+
+    @if ($profils->hasMorePages())
+        <a
+            href="{{ $profils->nextPageUrl() }}@if(request('search'))&search={{ request('search') }}@endif"
+            class="btn btn-primary"
+        >
+            Suivant
+        </a>
+    @else
+        <span class="btn btn-secondary disabled">Suivant</span>
+    @endif
 </div>
+
 <style>
-    /* Dans votre fichier CSS */
-.pagination {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.pagination .page-item {
-    margin: 0 5px;
-}
-
-.pagination .page-link {
-    padding: 8px 16px;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    text-decoration: none;
-    color: #333;
-}
-
-.pagination .page-item.active .page-link {
-    background-color: #007bff;
-    color: white;
-}
-
-.pagination .page-item.disabled .page-link {
-    background-color: #e9ecef;
-    color: #6c757d;
-}
-
+    .pagination a, .pagination span {
+        margin: 0 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    .pagination .btn-outline-primary {
+        border: 1px solid #007bff;
+    }
+    .pagination .btn-secondary.disabled {
+        opacity: 0.6;
+        pointer-events: none;
+    }
 </style>
-    @foreach($profils as $profil)
+
 <!-- Modal Modifier un Profil -->
+
+    @foreach($profils as $profil)
 <div class="modal fade" id="editProfileModal-{{ $profil->id }}" tabindex="-1" aria-labelledby="editProfileModalLabel-{{ $profil->id }}" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
