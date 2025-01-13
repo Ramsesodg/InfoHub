@@ -7,6 +7,23 @@
 <div class="container">
     <h1>Gestion des Profils</h1>
 
+
+        @if(Session::has('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
+
+        <script>
+            $(document).ready(function () {
+                setTimeout(function () {
+                    $("div.alert").fadeOut('slow', function () {
+                        $(this).remove();
+                    });
+                }, 5000); // 5 secondes avant la disparition
+            });
+        </script>
+
     <form action="{{ route('index') }}" method="GET" class="d-flex mb-3">
         <input
             type="text"
@@ -65,13 +82,13 @@
                             <option value="utilisateur">Utilisateur</option>
                         </select>
                     </div>
-                    <div class="mb-3">
+                    <!--div class="mb-3">
                         <label for="status">Statut</label>
                         <select class="form-control" id="status" name="status" required>
                             <option value="actif">Actif</option>
                             <option value="inactif">Inactif</option>
                         </select>
-                    </div>
+                    </div-->
                     <button type="submit" class="btn btn-success">Créer</button>
                 </form>
             </div>

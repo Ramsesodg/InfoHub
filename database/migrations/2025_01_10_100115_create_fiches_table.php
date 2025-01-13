@@ -15,16 +15,16 @@ class CreateFichesTable extends Migration
     {
         Schema::create('fiches', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('profil_id')->references('id')->on('profils');
-            $table->string('nom_prenom_enquete'); // Nom et prénom de l'enquête
-            $table->string('telephone_enquete'); // Téléphone de l'enquête
-            $table->string('ville'); // Ville
-            $table->decimal('longitude', 10, 7); // Longitude
-            $table->decimal('latitude', 10, 7); // Latitude
-            $table->string('nom_realisation'); // Nom de la réalisation
-            $table->string('type_enquete'); // Type d'enquête
-            $table->boolean('synchro')->default(false); // Synchronisation
-            $table->boolean('validation')->default(false); // Validation
+            $table->string('nom_enquete');
+            $table->string('prenom_enquete');
+            $table->string('telephone_enquete');
+            $table->string('ville');
+            $table->decimal('longitude', 10, 7);
+            $table->decimal('latitude', 10, 7);
+            $table->string('nom_realisation');
+            $table->enum('type_enquete', ['forage', 'saponification']);
+            $table->integer('validation')->default(0); // Statut de validation (0 = Initié)
+            $table->string('status')->default('actif'); // Défaut corrigé
             $table->timestamps();
         });
     }
@@ -38,4 +38,5 @@ class CreateFichesTable extends Migration
     {
         Schema::dropIfExists('fiches');
     }
+
 }

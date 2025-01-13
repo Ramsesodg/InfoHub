@@ -23,4 +23,5 @@ class Profil extends Model
     {
         return $this->hasMany(Fiche::class, 'id_profil');
     }
+    
 }
