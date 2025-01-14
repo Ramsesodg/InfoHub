@@ -41,60 +41,67 @@
     </button>
 
     <!-- Modal Créer un Profil -->
-<div class="modal fade" id="createProfileModal" tabindex="-1" aria-labelledby="createProfileModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="createProfileModalLabel">Créer un Nouveau Profil</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="{{ route('profils.store') }}" method="POST">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="nom">Nom</label>
-                        <input type="text" class="form-control" id="nom" name="nom" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="prenom">Prénom</label>
-                        <input type="text" class="form-control" id="prenom" name="prenom" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="telephone">Téléphone</label>
-                        <input type="text" class="form-control" id="telephone" name="telephone" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="nom_utilisateur">Nom d'Utilisateur</label>
-                        <input type="text" class="form-control" id="nom_utilisateur" name="nom_utilisateur" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="mot_de_passe">Mot de Passe</label>
-                        <input type="password" class="form-control" id="mot_de_passe" name="mot_de_passe" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="type">Type</label>
-                        <select class="form-control" id="type" name="type" required>
-                            <option value="admin">Admin</option>
-                            <option value="utilisateur">Utilisateur</option>
-                        </select>
-                    </div>
-                    <!--div class="mb-3">
-                        <label for="status">Statut</label>
-                        <select class="form-control" id="status" name="status" required>
-                            <option value="actif">Actif</option>
-                            <option value="inactif">Inactif</option>
-                        </select>
-                    </div-->
-                    <button type="submit" class="btn btn-success">Créer</button>
-                </form>
+    <div class="modal fade" id="createProfileModal" tabindex="-1" aria-labelledby="createProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createProfileModalLabel">Créer un Nouveau Profil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('profils.store') }}" method="POST">
+                        @csrf
+
+                        <!-- Ligne pour Nom, Prénom et Email -->
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="nom">Nom</label>
+                                <input type="text" class="form-control" id="nom" name="nom" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="prenom">Prénom</label>
+                                <input type="text" class="form-control" id="prenom" name="prenom" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <!-- Ligne pour Téléphone et Nom d'utilisateur -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="telephone">Téléphone</label>
+                                <input type="text" class="form-control" id="telephone" name="telephone" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nom_utilisateur">Nom d'Utilisateur</label>
+                                <input type="text" class="form-control" id="nom_utilisateur" name="nom_utilisateur" required>
+                            </div>
+                        </div>
+
+                        <!-- Ligne pour Mot de passe et Type -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="mot_de_passe">Mot de Passe</label>
+                                <input type="password" class="form-control" id="mot_de_passe" name="mot_de_passe" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="type">Type</label>
+                                <select class="form-control" id="type" name="type" required>
+                                    <option value="admin">Admin</option>
+                                    <option value="utilisateur">Utilisateur</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Créer</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
 
 
     <!-- Tableau des Profils -->

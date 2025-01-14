@@ -52,4 +52,11 @@ class HomeController extends Controller
         $profils = Profil::all(); // Récupération de tous les profils pour le formulaire
         return view('pages.fiches');
     }
+
+    public function showSidebar()
+{
+    $profil = Profil::all();
+    return view('layouts.partials.sidebar', compact('profil'));
+}
+
 }
