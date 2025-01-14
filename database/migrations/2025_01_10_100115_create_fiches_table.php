@@ -18,13 +18,13 @@ class CreateFichesTable extends Migration
             $table->string('nom_enquete');
             $table->string('prenom_enquete');
             $table->string('telephone_enquete');
-            $table->string('ville');
+            $table->enum('ville',['ouagadougou','kaya','dori']);
             $table->decimal('longitude', 10, 7);
             $table->decimal('latitude', 10, 7);
             $table->string('nom_realisation');
             $table->enum('type_enquete', ['forage', 'saponification']);
             $table->integer('validation')->default(0); // Statut de validation (0 = Initié)
-            $table->string('status')->default('actif'); // Défaut corrigé
+            $table->integer('synchro')->default(0); // Défaut corrigé
             $table->timestamps();
         });
     }

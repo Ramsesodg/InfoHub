@@ -105,11 +105,11 @@ class FicheController extends Controller
         $fiche = Fiche::findOrFail($id);
 
         // Inversion du statut
-        $fiche->status = $fiche->status === 'actif' ? 'inactif' : 'actif';
+        $fiche->synchro = $fiche->synchro == 0 ? 1 : 0;
         $fiche->save();
 
         // Redirection avec un message de succès
-        return redirect()->back()->with('success', 'Statut du profil mis à jour avec succès.');
+        return redirect()->back()->with('success', 'Synchronisation de la fiche mis à jour avec succès.');
     }
 
     // Supprimer une enquête

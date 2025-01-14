@@ -23,7 +23,7 @@ class Fiche extends Model
         'nom_realisation',
         'type_enquete',
         'validation',
-        'status',
+        'synchro',
 
     ];
 
@@ -33,6 +33,11 @@ class Fiche extends Model
         return $this->belongsTo(Profil::class, 'id_profil');
     }
 
+    const TYPE_OUAGADOUGOU = 'ouagadougou';
+    const TYPE_KAYA = 'kaya';
+    const TYPE_DORI = 'dori';
+    const SYNCHRO = 0;
+    const NOSYNCHRO= 1;
     const TYPE_FORAGE = 'forage';
     const TYPE_SAPONIFICATION = 'saponification';
 

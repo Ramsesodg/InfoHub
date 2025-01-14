@@ -38,6 +38,15 @@
                         @csrf
 
                         <div class="mb-3">
+                            <label for="type_enquete">Type Enquête</label>
+                           <select name="type_enquete"  class="form-control" id="type_enquete" >
+                                <option value="">selectionner un type</option>
+                                <option value="forage">Forage</option>
+                                <option value="saponification">Saponification</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
                             <label for="nom_enquete">Nom </label>
                             <input type="text" class="form-control" id="nom_enquete" name="nom_enquete" >
                         </div>
@@ -49,9 +58,14 @@
                             <label for="telephone_enquete">Téléphone</label>
                             <input type="text" class="form-control" id="telephone_enquete" name="telephone_enquete" >
                         </div>
-                        <div class="mb-3">
+                       <div class="mb-3">
                             <label for="ville">Ville</label>
-                            <input type="text" class="form-control" id="ville" name="ville" >
+                           <select name="ville"  class="form-control" id="ville" >
+                                <option value="">selectionner une ville</option>
+                                <option value="ouagadougou">Ouagadougou</option>
+                                <option value="kaya">Kaya</option>
+                                <option value="dori">Dori</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="longitude">Longitude</label>
@@ -65,23 +79,22 @@
                             <label for="nom_realisation">Nom Réalisation</label>
                             <input type="text" class="form-control" id="nom_realisation" name="nom_realisation" >
                         </div>
+
                         <div class="mb-3">
-                            <label for="type_enquete">Type Enquête</label>
-                           <select name="type_enquete"  class="form-control" id="type_enquete" >
-                                <option value="forage">Forage</option>
-                                <option value="saponification">Saponification</option>
+                            <label for="synchro">Synchro</label>
+                            <select name="synchro" class="form-control" >
+                                <option value="0">Synchronisé</option>
+                                <option value="1">Non synchronisé</option>
                             </select>
                         </div>
 
-
                         <div class="mb-3">
                             <label for="validation">Validation</label>
-
-                        <select name="validation" class="form-control" >
-                            <option value="0">Initier</option>
-                            <option value="1">Valider</option>
-                            <option value="2">Rejeter</option>
-                        </select>
+                            <select name="validation" class="form-control" >
+                                <option value="0">Initier</option>
+                                <option value="1">Valider</option>
+                                <option value="2">Rejeter</option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-success">Créer</button>
                     </form>
@@ -95,16 +108,15 @@
     <table class="table table-bordered mt-3">
         <thead>
             <tr>
+                <th>Type Enquête</th>
                 <th>Nom & Prénom</th>
                 <th>Téléphone</th>
                 <th>Ville</th>
                 <th>Longitude</th>
                 <th>Latitude</th>
                 <th>Nom Réalisation</th>
-                <th>Type Enquête</th>
-
+                <th>Synchro</th>
                 <th>Validation</th>
-                <th>status</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -112,30 +124,34 @@
 
             @foreach($fiches as $fiche)
             <tr>
+                <td>{{ $fiche->type_enquete }}</td>
                 <td>{{ $fiche->nom_enquete }} {{ $fiche->prenom_enquete }}</td>
                 <td>{{ $fiche->telephone_enquete }}</td>
                 <td>{{ $fiche->ville }}</td>
                 <td>{{ $fiche->longitude }}</td>
                 <td>{{ $fiche->latitude }}</td>
                 <td>{{ $fiche->nom_realisation }}</td>
-                <td>{{ $fiche->type_enquete }}</td>
-
+                <td>
+                        <form action="{{ route('fiches.toggleStatus', $fiche->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" class="btn btn-{{ $fiche->synchro == 0 ? 'danger' : 'success' }} btn-sm">
+                                {{ $fiche->synchro == 0 ? 'Non synchronisé' : 'Synchronisé' }}
+                            </button>
+                        </form>
+                    @if($fiche->synchro == 0)
+                    @elseif($fiche->synchro == 1)
+                    @endif
+                </td>
                 <td>   @if($fiche->validation == 0) Initié
                     @elseif($fiche->validation == 1) Validé
                     @else Rejeté
                     @endif
                 </td>
-                <td>{{ $fiche->status}}</td>
 
                 <td>
                     <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editFicheModal{{ $fiche->id }}">Modifier</button>
-                    <form action="{{ route('fiches.toggleStatus', $fiche->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('PUT')
-                            <button type="submit" class="btn btn-{{ $fiche->status === 'actif' ? 'danger' : 'success' }} btn-sm">
-                                {{ $fiche->status === 'actif' ? 'Désactiver' : 'Activer' }}
-                            </button>
-                        </form>
+
                     <!--form action="{{ route('fiches.delete', $fiche->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
