@@ -27,82 +27,97 @@
 
     <!-- Modal Créer une Fiche -->
     <div class="modal fade" id="createFicheModal" tabindex="-1" aria-labelledby="createFicheModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="createFicheModalLabel">Créer une Nouvelle Fiche</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{ route('fiches.store') }}" method="POST">
-                        @csrf
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createFicheModalLabel">Créer une Nouvelle Fiche</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('fiches.store') }}" method="POST">
+                    @csrf
 
-                        <div class="mb-3">
+                    <!-- Aligner trois champs sur une ligne -->
+                    <div class="row mb-3">
+                        <div class="col-md-4">
                             <label for="type_enquete">Type Enquête</label>
-                           <select name="type_enquete"  class="form-control" id="type_enquete" >
-                                <option value="">selectionner un type</option>
+                            <select name="type_enquete" class="form-control" id="type_enquete">
+                                <option value="">Sélectionner un type</option>
                                 <option value="forage">Forage</option>
                                 <option value="saponification">Saponification</option>
                             </select>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="nom_enquete">Nom </label>
-                            <input type="text" class="form-control" id="nom_enquete" name="nom_enquete" >
+                        <div class="col-md-4">
+                            <label for="nom_enquete">Nom</label>
+                            <input type="text" class="form-control" id="nom_enquete" name="nom_enquete">
                         </div>
-                        <div class="mb-3">
+                        <div class="col-md-4">
                             <label for="prenom_enquete">Prénom</label>
-                            <input type="text" class="form-control" id="prenom_enquete" name="prenom_enquete" >
+                            <input type="text" class="form-control" id="prenom_enquete" name="prenom_enquete">
                         </div>
-                        <div class="mb-3">
+                    </div>
+
+                    <!-- Aligner deux champs sur une ligne -->
+                    <div class="row mb-3">
+                        <div class="col-md-4">
                             <label for="telephone_enquete">Téléphone</label>
-                            <input type="text" class="form-control" id="telephone_enquete" name="telephone_enquete" >
+                            <input type="text" class="form-control" id="telephone_enquete" name="telephone_enquete">
                         </div>
-                       <div class="mb-3">
+                        <div class="col-md-4">
+                            <label for="nom_realisation">Nom Réalisation</label>
+                            <input type="text" class="form-control" id="nom_realisation" name="nom_realisation">
+                        </div>
+                        <div class="col-md-4">
                             <label for="ville">Ville</label>
-                           <select name="ville"  class="form-control" id="ville" >
-                                <option value="">selectionner une ville</option>
+                            <select name="ville" class="form-control" id="ville">
+                                <option value="">Sélectionner une ville</option>
                                 <option value="ouagadougou">Ouagadougou</option>
                                 <option value="kaya">Kaya</option>
                                 <option value="dori">Dori</option>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="longitude">Longitude</label>
-                            <input type="text" class="form-control" id="longitude" name="longitude" >
-                        </div>
-                        <div class="mb-3">
-                            <label for="latitude">Latitude</label>
-                            <input type="text" class="form-control" id="latitude" name="latitude" >
-                        </div>
-                        <div class="mb-3">
-                            <label for="nom_realisation">Nom Réalisation</label>
-                            <input type="text" class="form-control" id="nom_realisation" name="nom_realisation" >
-                        </div>
+                    </div>
 
-                        <div class="mb-3">
+                    <!-- Aligner trois champs sur une ligne -->
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="longitude">Longitude</label>
+                            <input type="text" class="form-control" id="longitude" name="longitude">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="latitude">Latitude</label>
+                            <input type="text" class="form-control" id="latitude" name="latitude">
+                        </div>
+                        <div class="col-md-4">
                             <label for="synchro">Synchro</label>
-                            <select name="synchro" class="form-control" >
+                            <select name="synchro" class="form-control">
                                 <option value="0">Synchronisé</option>
                                 <option value="1">Non synchronisé</option>
                             </select>
                         </div>
 
-                        <div class="mb-3">
+                    </div>
+
+                    <!-- Aligner deux champs sur une ligne -->
+                    <div class="row mb-3">
+
+                        <div class="col-md-6">
                             <label for="validation">Validation</label>
-                            <select name="validation" class="form-control" >
+                            <select name="validation" class="form-control">
                                 <option value="0">Initier</option>
                                 <option value="1">Valider</option>
                                 <option value="2">Rejeter</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-success">Créer</button>
-                    </form>
+                    </div>
 
-                </div>
+                    <button type="submit" class="btn btn-success">Créer</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
+
 
     <!-- Tableau des Fiches -->
     <table class="table table-bordered mt-3">
@@ -143,14 +158,33 @@
                     @elseif($fiche->synchro == 1)
                     @endif
                 </td>
-                <td>   @if($fiche->validation == 0) Initié
-                    @elseif($fiche->validation == 1) Validé
-                    @else Rejeté
+                <td>
+                    @if($fiche->validation == 0)
+                        <span class="badge bg-warning">Initié</span>
+                    @elseif($fiche->validation == 1)
+                        <span class="badge bg-success">Validé</span>
+                    @else
+                        <span class="badge bg-danger">Rejeté</span>
                     @endif
+
+
                 </td>
 
+
                 <td>
-                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editFicheModal{{ $fiche->id }}">Modifier</button>
+                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editFicheModal{{ $fiche->id }}">Modifier</button> <!-- Bouton Validé -->
+                    <form action="{{ route('fiches.updateValidation', ['id' => $fiche->id, 'validation' => 1]) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit" class="btn btn-success btn-sm">Validé</button>
+                    </form>
+
+                    <!-- Bouton Rejeté -->
+                    <form action="{{ route('fiches.updateValidation', ['id' => $fiche->id, 'validation' => 2]) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit" class="btn btn-danger btn-sm">Rejeté</button>
+                    </form>
 
                     <!--form action="{{ route('fiches.delete', $fiche->id) }}" method="POST" style="display:inline;">
                         @csrf

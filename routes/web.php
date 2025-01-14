@@ -24,8 +24,9 @@ Route::get('/fiches', [HomeController::class, 'fiches'])->name('fiches');
 Route::post('/profils', [ProfilController::class, 'store'])->name('profils.store');
 Route::put('/profils/{id}', [ProfilController::class, 'update'])->name('profils.update');
 Route::put('/profils/{id}/toggle-status', [ProfilController::class, 'toggleStatus'])->name('profils.toggleStatus');
-Route::put('/fiches/{id}/toggle-status', [FicheController::class, 'toggleStatus'])->name('fiches.toggleStatus');
 
+Route::put('/fiches/{id}/validation/{validation}', [FicheController::class, 'updateValidation'])->name('fiches.updateValidation');
+Route::put('/fiches/{id}/toggle-status', [FicheController::class, 'toggleStatus'])->name('fiches.toggleStatus');
 Route::get('/fiches', [FicheController::class, 'allFiches'])->name('fiches');
 Route::post('/fiches', [FicheController::class, 'storeFiche'])->name('fiches.store');
 Route::delete('/fiches/{id}', [FicheController::class, 'deleteFiche'])->name('fiches.delete');

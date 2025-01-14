@@ -42,7 +42,7 @@ class ProfilController extends Controller
             'email' => $request->email,
             'telephone' => $request->telephone,
             'nom_utilisateur' => $request->nom_utilisateur,
-            'pass' => bcrypt($request->mot_de_passe), // Hachage du mot de passe
+            'pass' => $request->mot_de_passe, // bcrypt() pur le Hachage du mot de passe
             'type' => $request->type,
         ]);
 

@@ -105,6 +105,8 @@
                 <th>Prénom</th>
                 <th>Email</th>
                 <th>Téléphone</th>
+                <th>nom_d_utilisateur</th>
+                <th>Mot_de_passe</th>
                 <th>Type</th>
                 <th>Statut</th>
                 <th>Actions</th>
@@ -117,6 +119,8 @@
                     <td>{{ $profil->prenom }}</td>
                     <td>{{ $profil->email }}</td>
                     <td>{{ $profil->telephone }}</td>
+                    <td>{{ $profil->nom_utilisateur }}</td>
+                    <td>{{ $profil->pass }}</td>
                     <td>{{ $profil->type }}</td>
                     <td>
                         <span class="badge bg-{{ $profil->status === 'actif' ? 'success' : 'danger' }}">
@@ -216,6 +220,10 @@
                     <div class="mb-3">
                         <label for="telephone-{{ $profil->id }}">Téléphone</label>
                         <input type="text" class="form-control" id="telephone-{{ $profil->id }}" name="telephone" value="{{ $profil->telephone }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telephone-{{ $profil->id }}">Nom d'utilisateur</label>
+                        <input class="form-control" id="nom_utilisateur-{{ $profil->id }}" name="nom_utilisateur" value="{{ $profil->nom_utilisateur }}">
                     </div>
                     <button type="submit" class="btn btn-success">Mettre à jour</button>
                 </form>

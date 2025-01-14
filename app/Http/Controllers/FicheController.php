@@ -99,6 +99,20 @@ class FicheController extends Controller
         return redirect()->route('fiches')->with('success', 'Fiche mise à jour avec succès.');
     }
 
+    public function updateValidation(Request $request, $id, $validation)
+    {
+        // Trouver la fiche par ID
+        $fiche = Fiche::findOrFail($id);
+
+        // Mettre à jour la valeur de validation
+        $fiche->validation = $validation;
+        $fiche->save();
+
+        // Retourner à la page précédente avec un message
+        return redirect()->route('fiches')->with('success', 'La fiche a été mis à jour.');
+    }
+
+
     public function toggleStatus($id)
     {
         // Récupération du profil
