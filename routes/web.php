@@ -31,5 +31,5 @@ Route::get('/fiches', [FicheController::class, 'allFiches'])->name('fiches');
 Route::post('/fiches', [FicheController::class, 'storeFiche'])->name('fiches.store');
 Route::delete('/fiches/{id}', [FicheController::class, 'deleteFiche'])->name('fiches.delete');
 Route::put('/fiches/{id}', [FicheController::class, 'updateFiche'])->name('fiches.update');
-Route::get('/sidebar', [HomeController::class, 'showSidebar'])->name('');
+Route::get('/sidebar', [HomeController::class, 'showSiwardebar'])->name('');
 

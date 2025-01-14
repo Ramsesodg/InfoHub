@@ -16,7 +16,7 @@
         </div>
 
             <div class="info">
-                <a href="#" class="d-block">{{ $profil->nom_utilisateur }}</a>
+                <a href="#" class="d-block"></a>
             </div>
         </div>
 
