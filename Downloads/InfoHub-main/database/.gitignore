@@ -1,1 +1,39 @@
-*.sqlite*
+# Exclure les fichiers système
+*.log
+*.tmp
+*.ini
+*.exe
+*.zip
+*.mp3
+*.mp4
+*.jpeg
+*.jpg
+*.png
+.DS_Store
+desktop.ini
+
+# Exclure les répertoires système
+AppData/
+Application Data/
+Local Settings/
+My Documents/
+NetHood/
+PrintHood/
+Recent/
+SendTo/
+Start Menu/
+Templates/
+Favorites/
+Links/
+Saved Games/
+Searches/
+
+# Exclure les répertoires spécifiques à des outils
+.idea/
+.vscode/
+node_modules/
+*.class
+*.war
+*.jar
+.gradle/
+.m2/
